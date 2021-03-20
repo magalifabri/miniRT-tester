@@ -1,12 +1,7 @@
 #! /bin/bash
 
 YELLOW="\033[0;33m"
-RED="\033[0;31m"
-GREEN="\033[0;32m"
-HONEY="\e[38;5;214m"
-GREY="\e[38;5;245m"
 BOLD="\033[1m"
-REVERSED="\033[7m"
 RESET="\033[0m"
 
 VALGRIND=0
