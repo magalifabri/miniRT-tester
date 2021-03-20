@@ -11,8 +11,22 @@ RESET="\033[0m"
 
 VALGRIND=0
 
+# check and process flags
+while getopts v flag
+do
+	case "${flag}" in
+
+		v)
+			VALGRIND=1
+			;;
+	esac
+done
+
 # remove valgrind report for a fresh start
-rm valgrind-log-concat.txt > /dev/null 2>&1
+if [[ $VALGRIND = 1 ]]
+then
+    rm valgrind-log-concat.txt > /dev/null 2>&1
+fi
 
 # function that runs tests
 f_tester()
@@ -26,7 +40,7 @@ f_tester()
         valgrind --leak-check=full \
         --show-leak-kinds=all \
         --log-file=valgrind-log.txt \
-        ../a.out $1
+        ../a.out test_scenes/$1
         
         # add the valgrind-log to 
         cat valgrind-log.txt >> valgrind-log-concat.txt
@@ -34,23 +48,12 @@ f_tester()
         # add seperator in valgrind report between tests 
         echo -e "\n\n\n" >> valgrind-log-concat.txt
     else
-        ../a.out $1
+        ../a.out test_scenes/$1
     fi
 
     # add empty line between tests in stdout
     echo
 }
-
-# check and process flags
-while getopts v flag
-do
-	case "${flag}" in
-
-		v)
-			VALGRIND=1
-			;;
-	esac
-done
 
 # scene files to test
 f_tester bullshit_1.rt
