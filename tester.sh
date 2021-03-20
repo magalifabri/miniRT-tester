@@ -40,7 +40,7 @@ f_tester()
         valgrind --leak-check=full \
         --show-leak-kinds=all \
         --log-file=valgrind-log.txt \
-        ../a.out test_scenes/$1
+        ../miniRT test_scenes/$1
         
         # append the valgrind-log to the log compilation
         cat valgrind-log.txt >> valgrind-log-comp.txt
@@ -49,7 +49,7 @@ f_tester()
         echo -e "\n\n\n" >> valgrind-log-comp.txt
     else
         # run tests without valgrind
-        ../a.out test_scenes/$1
+        ../miniRT test_scenes/$1
     fi
 
     # add empty line between tests in stdout

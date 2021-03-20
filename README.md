@@ -1,3 +1,6 @@
+Requirements
+- your miniRT executable is actually called `miniRT`, as it should be :P
+
 Instructions
 1. `cd miniRT` (or whatever your project directory is called)
 2. `git clone https://github.com/magalifabri/miniRT-tester.git`
