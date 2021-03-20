@@ -25,7 +25,7 @@ done
 # remove valgrind report for a fresh start
 if [[ $VALGRIND = 1 ]]
 then
-    rm valgrind-log-concat.txt > /dev/null 2>&1
+    rm valgrind-log-comp.txt > /dev/null 2>&1
 fi
 
 # function that runs tests
@@ -36,18 +36,19 @@ f_tester()
 
     if [[ $VALGRIND = 1 ]]
     then
-        # run test (comment out valgrind part if desired)
+        # run test with valgrind
         valgrind --leak-check=full \
         --show-leak-kinds=all \
         --log-file=valgrind-log.txt \
         ../a.out test_scenes/$1
         
-        # add the valgrind-log to 
-        cat valgrind-log.txt >> valgrind-log-concat.txt
+        # append the valgrind-log to the log compilation
+        cat valgrind-log.txt >> valgrind-log-comp.txt
         
         # add seperator in valgrind report between tests 
-        echo -e "\n\n\n" >> valgrind-log-concat.txt
+        echo -e "\n\n\n" >> valgrind-log-comp.txt
     else
+        # run tests without valgrind
         ../a.out test_scenes/$1
     fi
 
@@ -59,32 +60,32 @@ f_tester()
 f_tester bullshit_1.rt
 f_tester bullshit_2.rt
 f_tester bullshit_3.rt
-# f_tester bullshit_4.rt
-# f_tester bullshit_5.rt
-# f_tester bullshit_6.rt
-# f_tester l_bad_colour_2.rt
-# f_tester l_bad_colour_3.rt
-# f_tester l_bad_colour.rt
-# f_tester l_format_1.rt
-# f_tester l_format_2.rt
-# f_tester l_missing_values_2.rt
-# f_tester l_missing_values_3.rt
-# f_tester l_missing_values.rt
-# f_tester missing_A.rt
-# f_tester missing_both_c.rt
-# f_tester missing_c.rt
-# f_tester reordered.rt
-# f_tester R_missing.rt
-# f_tester R_no_values.rt
-# f_tester R_one_value.rt
-# f_tester R_three_values.rt
-# f_tester R_too_high.rt
-# f_tester R_too_low.rt
-# f_tester R_very_small.rt
-# f_tester R_zeroes.rt
-# f_tester spacing.rt
-# f_tester template.rt
-# f_tester unknown_var.rt
+f_tester bullshit_4.rt
+f_tester bullshit_5.rt
+f_tester bullshit_6.rt
+f_tester l_bad_colour_2.rt
+f_tester l_bad_colour_3.rt
+f_tester l_bad_colour.rt
+f_tester l_format_1.rt
+f_tester l_format_2.rt
+f_tester l_missing_values_2.rt
+f_tester l_missing_values_3.rt
+f_tester l_missing_values.rt
+f_tester missing_A.rt
+f_tester missing_both_c.rt
+f_tester missing_c.rt
+f_tester reordered.rt
+f_tester R_missing.rt
+f_tester R_no_values.rt
+f_tester R_one_value.rt
+f_tester R_three_values.rt
+f_tester R_too_high.rt
+f_tester R_too_low.rt
+f_tester R_very_small.rt
+f_tester R_zeroes.rt
+f_tester spacing.rt
+f_tester template.rt
+f_tester unknown_var.rt
 
 # remove valgrind log
 rm valgrind-log.txt > /dev/null 2>&1
