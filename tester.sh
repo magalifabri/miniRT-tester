@@ -87,5 +87,8 @@ f_tester spacing.rt
 f_tester template.rt
 f_tester unknown_var.rt
 
-# remove valgrind log
-rm valgrind-log.txt > /dev/null 2>&1
+# if -v, remove valgrind log
+if [[ $VALGRIND = 1 ]]
+then
+    rm valgrind-log.txt > /dev/null 2>&1
+fi
