@@ -52,24 +52,6 @@ f_tester()
 }
 
 # scene files to test
-f_tester bullshit_1.rt
-f_tester bullshit_2.rt
-f_tester bullshit_3.rt
-f_tester bullshit_4.rt
-f_tester bullshit_5.rt
-f_tester bullshit_6.rt
-f_tester l_bad_colour_2.rt
-f_tester l_bad_colour_3.rt
-f_tester l_bad_colour.rt
-f_tester l_format_1.rt
-f_tester l_format_2.rt
-f_tester l_missing_values_2.rt
-f_tester l_missing_values_3.rt
-f_tester l_missing_values.rt
-f_tester missing_A.rt
-f_tester missing_both_c.rt
-f_tester missing_c.rt
-f_tester reordered.rt
 f_tester R_missing.rt
 f_tester R_no_values.rt
 f_tester R_one_value.rt
@@ -78,8 +60,41 @@ f_tester R_too_high.rt
 f_tester R_too_low.rt
 f_tester R_very_small.rt
 f_tester R_zeroes.rt
+f_tester bullshit_1.rt
+f_tester bullshit_2.rt
+f_tester bullshit_3.rt
+f_tester bullshit_4.rt
+f_tester bullshit_5.rt
+f_tester bullshit_6.rt
+f_tester escape.rt
+f_tester escape_2.rt
+f_tester escape_3.rt
+f_tester l_bad_colour.rt
+f_tester l_bad_colour_2.rt
+f_tester l_bad_colour_3.rt
+f_tester l_format_1.rt
+f_tester l_format_2.rt
+f_tester l_missing_values.rt
+f_tester l_missing_values_2.rt
+f_tester l_missing_values_3.rt
+f_tester missing_A.rt
+f_tester missing_both_c.rt
+f_tester missing_c.rt
+f_tester pl_format.rt
+f_tester pl_format_2.rt
+f_tester pl_format_3.rt
+f_tester pl_format_4.rt
+f_tester pl_format_5.rt
+f_tester pl_missing_values.rt
+f_tester pl_missing_values_2.rt
+f_tester pl_missing_values_3.rt
+f_tester pl_missing_values_4.rt
+f_tester pl_values.rt
+f_tester pl_values_2.rt
+f_tester pl_values_3.rt
+f_tester pl_values_4.rt
+f_tester reordered.rt
 f_tester spacing.rt
-f_tester template.rt
 f_tester unknown_var.rt
 
 # if -v, remove valgrind log
